@@ -17,29 +17,25 @@ import java.awt.Graphics2D;
 import java.awt.geom.GeneralPath;
 import javax.swing.JButton;
 
-public class Peca extends JButton
-{
-	private static int tamanho = 64;
-	private Estado estado;                
+public class Peca extends JButton{
+    private static int tamanho = 64;
+    private Estado estado;                
 
-	public void setEstado(Estado e)
-    {
-	  this.estado = e;
+    public void setEstado(Estado e){
+        this.estado = e;
     }
-    
-	public Estado getEstado()
-	{
-		return this.estado;
-	}
 
-	public Peca()
-	{
-		super();
-		estado =  Estado.IMPOSSIVEL;
-	}
-	public Dimension getMaximumSize() { return getPreferredSize(); }
-	public Dimension getMinimumSize() { return getPreferredSize(); }
-	public Dimension getPreferredSize() { return new Dimension(tamanho,tamanho); }
+    public Estado getEstado(){
+        return this.estado;
+    }
+
+    public Peca(){
+        super();
+        estado =  Estado.IMPOSSIVEL;
+    }
+    public Dimension getMaximumSize() { return getPreferredSize(); }
+    public Dimension getMinimumSize() { return getPreferredSize(); }
+    public Dimension getPreferredSize() { return new Dimension(tamanho,tamanho); }
     
     private void criarCirculo(Graphics2D g2d, Color cor1, Color cor2){
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
@@ -128,12 +124,12 @@ public class Peca extends JButton
                 setBackground(new Color(201, 233, 255));				
             }
         }
-		else
-			setBackground(new Color(237, 237, 237));					
+            else
+                setBackground(new Color(237, 237, 237));					
 	}    
 	protected void paintComponent(Graphics g)
 	{
-		super.paintComponent(g);
-		Desenhar(g);
+            super.paintComponent(g);
+            Desenhar(g);
 	}
 }
